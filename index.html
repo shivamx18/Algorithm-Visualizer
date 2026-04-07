@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menuScreen" class="screen active">
+  <h1>Algorithm Visualizer</h1>
+  <p class="subtitle">Select an algorithm to visualize step by step</p>
+
+  <div class="menu-grid">
+
+    <div class="menu-card" onclick="openAlgo('segment')">
+      <!-- <div class="icon">.</div> -->
+      <h3>Segment Tree</h3>
+      <p>Build, query, and update range-sum segment trees with live node highlighting</p>
+    </div>
+
+    <div class="menu-card" onclick="openAlgo('bfs')">
+      <!-- <div class="icon"></div> -->
+      <h3>Breadth-First Search</h3>
+      <p>Level-by-level graph traversal with a visible queue and explored layers</p>
+    </div>
+
+    <div class="menu-card" onclick="openAlgo('dfs')">
+      <!-- <div class="icon"></div> -->
+      <h3>Depth-First Search</h3>
+      <p>Recursive stack-driven traversal with backtracking highlighted in real time</p>
+    </div>
+
+    <div class="menu-card" onclick="openAlgo('dijkstra')">
+      <!-- <div class="icon"></div> -->
+      <h3>Dijkstra's Algorithm</h3>
+      <p>Shortest-path discovery with a priority queue on weighted directed graphs</p>
+    </div>
+
+  </div>
+</div>
+
+<div id="algoScreen" class="screen">
+  <div class="algo-layout">
+
+    <div class="algo-header">
+      <button class="back-btn" onclick="goBack()">&#8592; Back</button>
+      <span class="algo-title" id="algoTitle">BFS</span>
+      <span class="algo-badge" id="algoBadge">Graph</span>
+    </div>
+
+    <div class="algo-body">
+
+      <div class="sidebar" id="sidebar">
+      </div>
+
+      <div class="canvas-area">
+        <canvas id="mainCanvas"></canvas>
+        <div class="overlay-msg" id="overlayMsg" style="display:none">
+          <div class="big">..</div>
+          <p>Build the structure to begin</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
