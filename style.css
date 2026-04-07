@@ -1,0 +1,432 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #000000;
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.screen
+{
+  display: none;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.screen.active
+{
+  display: flex;
+}
+
+h1
+{
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #c084fc;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.subtitle
+{
+  color: #6b7280;
+  margin-bottom: 40px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.menu-grid
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.menu-card
+{
+  background: #0d0d0d;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  text-align: left;
+}
+.menu-card:hover
+{
+  border-color: #c084fc;
+  background: #130f1a;
+  transform: translateY(-2px);
+}
+
+.menu-card .icon
+{
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.menu-card h3
+{
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+}
+.menu-card p
+{
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+#algoScreen
+{
+  padding: 0;
+}
+
+.algo-layout
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+}
+
+.algo-header
+{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #0a0a0a;
+  border-bottom: 1px solid #1a1a1a;
+  flex-shrink: 0;
+}
+
+.back-btn
+{
+  background: none;
+  border: 1px solid #1f1f1f;
+  color: #6b7280;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.back-btn:hover
+{
+  border-color: #c084fc;
+  color: #c084fc;
+}
+
+.algo-title
+{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.algo-badge
+{
+  background: #1a0d2e;
+  border: 1px solid #4c1d95;
+  color: #c084fc;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.algo-body
+{
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 57px);
+}
+
+.sidebar
+{
+  width: 300px;
+  min-width: 300px;
+  background: #0a0a0a;
+  border-right: 1px solid #1a1a1a;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.canvas-area
+{
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+}
+
+canvas
+{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.panel
+{
+  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.panel h4
+{
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #4b5563;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+label
+{
+  display: block;
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+input[type=text],
+input[type=number],
+select
+{
+  width: 100%;
+  background: #000000;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input[type=text]:focus,
+input[type=number]:focus,
+select:focus
+{
+  border-color: #c084fc;
+}
+
+input[type=range]
+{
+  width: 100%;
+  accent-color: #c084fc;
+}
+
+.btn
+{
+  width: 100%;
+  padding: 9px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn:active
+{
+  transform: scale(0.97);
+}
+
+.btn-primary
+{
+  background: #4c1d95;
+  color: #e9d5ff;
+}
+.btn-primary:hover
+{
+  background: #5b21b6;
+}
+
+.btn-success
+{
+  background: #064e3b;
+  color: #6ee7b7;
+}
+.btn-success:hover
+{
+  background: #065f46;
+}
+
+.btn-warning
+{
+  background: #78350f;
+  color: #fcd34d;
+}
+.btn-warning:hover
+{
+  background: #92400e;
+}
+
+.btn-sm
+{
+  padding: 5px 11px;
+  width: auto;
+  font-size: 0.78rem;
+  border-radius: 6px;
+  border: 1px solid #1f1f1f;
+  background: #0d0d0d;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-sm:hover
+{
+  border-color: #c084fc;
+  color: #c084fc;
+}
+
+.btn-row
+{
+  display: flex;
+  gap: 8px;
+}
+
+.log
+{
+  background: #000000;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.76rem;
+  color: #6b7280;
+  min-height: 80px;
+  max-height: 140px;
+  overflow-y: auto;
+  line-height: 1.7;
+}
+
+.log .ev-visit 
+{
+  color: #a78bfa;
+}
+.log .ev-found
+{
+  color: #34d399;
+}
+.log .ev-dist
+{
+  color: #fb923c;
+}
+.log .ev-info
+{
+  color: #e879f9;
+}
+
+.status-bar
+{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge
+{
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge-blue
+{
+  background: #1a0d2e;
+  color: #a78bfa;
+  border: 1px solid #4c1d95;
+}
+.badge-green
+{
+  background: #022c22;
+  color: #34d399;
+  border: 1px solid #065f46;
+}
+.badge-orange
+{
+  background: #1c0f03; 
+  color: #fb923c; 
+  border: 1px solid #7c2d12;
+}
+
+.speed-row
+{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.presets
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.overlay-msg
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #374151;
+  pointer-events: none;
+}
+.overlay-msg .big
+{
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.overlay-msg p
+{
+  font-size: 0.85rem;
+}
+
+@media (max-width: 700px)
+{
+  .algo-body
+  {
+    flex-direction: column;
+  }
+  .sidebar
+  {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    max-height: 45vh;
+    border-right: none;
+    border-bottom: 1px solid #1a1a1a;
+  }
+  .menu-grid
+  {
+    grid-template-columns: 1fr;
+  }
+}
